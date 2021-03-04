@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Fruit Classification</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+      body {
+        margin: 0%;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #grad1 {
+              height: 200px;
+              background-image: linear-gradient(to right, red , orange);
+      }
+
+      .footer{
+              background: #152F4F;
+              color:white;
+
+              .links{
+                     ul {list-style-type: none;}
+                     li a{
+                          color: white;
+                          transition: color .2s;
+                          &:hover{
+                          text-decoration:none;
+                          color:#4180CB;
+                     }
+              }
+      }
+      .about-company{
+        i{font-size: 25px;}
+        a{
+          color:white;
+          transition: color .2s;
+          &:hover{color:#4180CB}
+        }
+      }
+      .location{
+        i{font-size: 18px;}
+      }
+      .copyright p{border-top:1px solid rgba(255,255,255,.1);}
+      }
+
+
+      .topnav {
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .topnav a.active {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      .topnav .icon {
+        display: none;
+      }
+
+      @media screen and (max-width: 600px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+         float: right;
+         display: block;}
+      }
+
+      @media screen and (max-width: 600px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+      }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navbar-->
+<div class="row" style="padding-left: 0%; padding-right: 0%; margin-right: 0%; margin-left: 0%;">
+  <div class="topnav" id="myTopnav">
+    <a href="home" class="active">Home</a>
+    <a href="contact">Contact</a>
+    <a href="about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i style="color: white;" class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+  <!-- End Navbar-->
+
+<p></p>
+
+        <div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="{{url_for('static',filename='slide1.jpg') }}" alt="Fruit1" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="{{url_for('static',filename='slide2.jpg') }}" alt="Fruit2" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="{{url_for('static',filename='slide3.jpg') }}" alt="Fruit3" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+        </div>
+
+        {% block code_block %}
+
+        {% endblock %}
+
+
+
+
+
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>
+          
+
+
+
+</body>
+
+<!-- Footer Section-->
+<div class="mt-5 pt-5 pb-5 footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-xs-12 about-company">
+        <h3>Fruit Classification</h3>
+        <p class="pr-5 text-white-50">Model for Fruit Classification using Deeplearning(CNN)</p>
+        <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
+      </div>
+      <div class="col-lg-3 col-xs-12 links">
+        <h4 class="mt-lg-0 mt-sm-3">Contacts</h4>
+        Tushar Nagrale :<br><a href="#">tushar.nagrale12@gmail.com</a><p>
+        Harshal Fegade :<br><a href="#">harshalfegade500@gmail.com</a><br>
+
+      </div>
+      <div class="col-lg-4 col-xs-12 location">
+        <h4 class="mt-lg-0 mt-sm-4">Location</h4>
+        <p>"Sunbeam IT Park", Phase 2 of Rajiv Gandhi Infotech Park,Hinjawadi, Pune - 411057, MH-INDIA</p>
+        <p><i class="fa fa-envelope-o mr-3"></i>Email : siit@sunbeaminfo.com</p>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col copyright">
+        <p class=""><small class="text-white-50">© 2020. All Rights Reserved.</small></p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</html>

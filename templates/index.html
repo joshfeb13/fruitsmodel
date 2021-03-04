@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+{% block code_block %}
+        {{ dropzone.load() }}
+        {{ dropzone.style('border: 2px dashed #0087F7; margin: 10%; min-height: 70px;') }}
+        <h1 style="text-align: center;">Click in the box to select the fruit image</h1>
+        {{ dropzone.create(action_view='index') }}
+{% endblock %}
+    
